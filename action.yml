@@ -1,0 +1,18 @@
+name: "Node.js Composite Action"
+description: "Instala dependências, roda testes e builda projeto Node.js"
+author: "Seu Nome"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Instalar dependências
+      run: npm install
+      shell: bash
+
+    - name: Rodar testes
+      run: npm test
+      shell: bash
+
+    - name: Build do projeto
+      run: npm run build --if-present
+      shell: bash
